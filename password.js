@@ -1,3 +1,9 @@
+// Button to generate password
+var generateBtn = document.querySelector("#generate");
+
+// Button to copy password to clipboard
+var copyBtn = document.querySelector("#copy");
+
 //Prompts user for password length
 var passwordLength = prompt("Enter password length:");
 
@@ -55,24 +61,20 @@ for (var i = 0; i < 128; i++) {
 // The randomly-generated password trimmed to user-specified length
 var newPassword = password.slice(0, passwordLength);
 
-// Button to generate password
-var generateBtn = document.querySelector("#generate");
+// Enable password generate button
+document.getElementsByTagName("button")[0].setAttribute("class", "btn");
 
-// Write password to the password text area
+// Write password to the password text area and enable copy password button
 function writePassword() {
     var passwordText = document.querySelector("#password");
     passwordText.value = newPassword.join("");
+    document.getElementsByTagName("button")[1].setAttribute("class", "btn");
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Button to copy password to clipboard
-var copyBtn = document.querySelector("#copy");
-copyBtn.removeAttribute("disabled");
-
 // Function to copy password to clipboard
-
 function copyToClipboard() {
     var copyText = document.querySelector("#password");
     copyText.select();
@@ -82,8 +84,6 @@ function copyToClipboard() {
 // Add event listener to copy button
 copyBtn.addEventListener("click", copyToClipboard);
 
-
 console.log("Generated password is: " + newPassword.join(""));
 console.log("The password length is: " + newPassword.length);
-
 
