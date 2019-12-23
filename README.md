@@ -1,6 +1,6 @@
 # passwordGenerator
 
-![Password Generator](/Assets/passwordGenerator.png)
+![Password Generator](Assets/passwordGenerator.JPG)
 
 The purpose of this site is to generate secure passwords with user-specified length and character types.
 
